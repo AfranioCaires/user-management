@@ -1,0 +1,38 @@
+{
+  "name": "@ubisafe/backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "pnpm build && concurrently --kill-others --names tsc,alias,node \"tsc -p tsconfig.build.json --watch --preserveWatchOutput\" \"tsc-alias -p tsconfig.build.json --watch\" \"node --watch-path=dist --env-file-if-exists=.env dist/main.js\"",
+    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+    "start": "node --env-file-if-exists=.env dist/main.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@nestjs/common": "^12.1.0",
+    "@nestjs/core": "^12.1.0",
+    "@nestjs/platform-express": "^12.1.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^12.1.0",
+    "@standard-schema/spec": "^1.1.0",
+    "@swc/core": "^1.16.2",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.2",
+    "@types/supertest": "^7.2.1",
+    "@vitest/coverage-v8": "^5.0.1",
+    "concurrently": "^10.0.5",
+    "supertest": "^7.3.0",
+    "tsc-alias": "^1.9.5",
+    "typescript": "^7.0.2",
+    "unplugin-swc": "^2.0.0",
+    "vitest": "^5.0.1"
+  }
+}
