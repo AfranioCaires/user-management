@@ -1,0 +1,69 @@
+@import '@fontsource/lato/400.css';
+@import '@fontsource/lato/700.css';
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+:root {
+  --background: #ffffff;
+  --foreground: #4d4d4d;
+  --popover: #ffffff;
+  --popover-foreground: #4d4d4d;
+  --primary: #2ba094;
+  --primary-foreground: #ffffff;
+  --secondary: #d9d9d9;
+  --secondary-foreground: #2ba094;
+  --muted: #e6e6e6;
+  --muted-foreground: #8c8c8c;
+  --destructive: #b52218;
+  --destructive-foreground: #ffffff;
+  --success: #31af05;
+  --success-foreground: #ffffff;
+  --heading: #000000;
+  --disabled: #acacac;
+  --border: #d9d9d9;
+  --input: #d9d9d9;
+  --ring: #2ba094;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: 'Lato', ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-heading: var(--heading);
+  --color-disabled: var(--disabled);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
